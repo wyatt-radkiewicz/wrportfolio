@@ -13,7 +13,7 @@ export default function Home() {
 			</div>
 			<p>
 				I am a student at Boise State University and am currently working for a
-				Computer Science degree with a minor in Cyber Security. I've been coding
+				Computer Science degree with a minor in Cyber Security. I&apos;ve been coding
 				since I could write and love doing it. I like lower-level programming in
 				C, C++, Assembly, but I also can code in Javascript, Java, etc.
 			</p>
