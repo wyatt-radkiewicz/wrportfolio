@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import { OrbitControls, useVideoTexture, useTexture } from '@react-three/drei'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import useTheme from './useTheme.js'
 extend({ Canvas, OrbitControls })
 
 function LaptopModel(props) {
@@ -19,12 +20,14 @@ function LaptopModel(props) {
 }
 
 export default function Laptop(props) {
+	const isDark = useTheme()
 	return (
 		<div {...props} >
 			<Canvas>
 				<Suspense fallback={null}>
-					<ambientLight />
-					<pointLight position={[0, 10, -5]} intensity={1} />
+					<ambientLight intensity={isDark ? 5 : 10} />
+					<pointLight position={[-3, 2.5, -2]} intensity={1} />
+					<pointLight position={[3, 3, -2]} intensity={1} />
 					<LaptopModel position={[0, -0.35, 0]} scale={1.2} />
 				</Suspense>
 				<OrbitControls enablePan={false} enableZoom={false} minPolarAngle={1.2} maxPolarAngle={1.2} autoRotate={true} autoRotateSpeed={1.25} damping={0.01} />
